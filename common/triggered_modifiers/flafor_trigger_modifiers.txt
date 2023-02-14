@@ -1,0 +1,13 @@
+national_militia_war = {
+	potential = {
+		has_country_modifier = mod_national_militia
+	}
+
+	trigger = {
+		is_at_war = yes
+		has_country_modifier = mod_national_militia
+	}
+
+	global_unrest = 3
+	stability_cost_modifier = 0.25
+}

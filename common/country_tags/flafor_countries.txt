@@ -1,0 +1,5 @@
+# Special countries..
+VAM = "countries/Vampiric Empire.txt"
+MGS = "countries/Madagascar.txt"
+CTU = "countries/Castuo.txt"
+JUG = "countries/Yugoslavia.txt"

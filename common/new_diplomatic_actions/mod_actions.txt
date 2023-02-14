@@ -1,0 +1,45 @@
+enforce_voivodeship = {
+	category = influence
+
+	require_acceptance = no
+	
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	is_visible = {
+		FROM = {
+			is_subject_of_type = vassal
+			is_subject_of = ROOT
+		}
+		OR = {
+			culture_group = west_slavic
+			culture_group = carpathian
+			culture_group = baltic
+		}
+	}
+	is_allowed = {
+		is_at_war = no
+		FROM = {
+			is_at_war = no
+		}
+	}
+	on_accept = {
+		add_trust = {
+			who = FROM
+			value = 20
+			mutual = yes
+		}
+		create_subject = {
+			subject_type = voivedeship
+			subject = FROM  # dk check
+		}
+	}
+	on_decline = {
+	}
+	
+	ai_acceptance = {
+	}
+	ai_will_do = {
+		always = yes
+	}
+}

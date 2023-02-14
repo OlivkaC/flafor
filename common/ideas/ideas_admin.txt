@@ -1,0 +1,445 @@
+religious_ideas = {
+	category = ADM
+
+	bonus = {
+		culture_conversion_cost = -0.25
+		brahmins_hindu_loyalty_modifier = 0.1
+		church_loyalty_modifier = 0.1
+	}
+
+	trigger = {
+		NOT = { has_idea_group = humanist_ideas }
+	}
+
+	missionary_schools = {
+		missionaries = 1
+	}
+	church_attendance_duty = {
+		stability_cost_modifier = -0.25
+	}
+	divine_supremacy = {
+		global_missionary_strength = 0.03
+	}
+	devoutness = {
+		tolerance_own = 2
+		papal_influence = 2
+		devotion = 0.5
+		monthly_fervor_increase = 0.25
+		church_power_modifier = 0.1
+		monthly_piety_accelerator = 0.001
+		yearly_karma_decay = 0.1
+		yearly_doom_reduction = 1
+		yearly_authority = 0.15
+		yearly_patriarch_authority = 0.005
+	}
+	religious_tradition = {
+		prestige = 1
+	}
+	inquisition = {
+		missionary_maintenance_cost = -0.5
+		prestige_per_development_from_conversion = 0.1
+	}
+	deus_vult = {
+		cb_on_religious_enemies = yes
+	}
+
+	ai_will_do = {
+		factor = 0.9
+	}
+}
+
+humanist_ideas = {
+	category = ADM
+
+	bonus = {
+		idea_cost = -0.1
+		yearly_harmony = 0.25  # Used if religion uses harmony (confucianism)
+		brahmins_muslim_loyalty_modifier = 0.1
+		dhimmi_loyalty_modifier = 0.1
+	}
+
+	trigger = {
+		NOT = { has_idea_group = religious_ideas }
+	}
+
+	tolerance_idea = {
+		religious_unity = 0.25
+	}
+	local_traditions = {
+		global_unrest = -2
+		harmonization_speed = 0.25
+	}
+	ecumenism = {
+		tolerance_heretic = 2
+	}
+	indirect_rule = {
+		years_of_nationalism = -10
+	}
+	cultural_ties = {
+		num_accepted_cultures = 2
+	}
+	benevolence = {
+		improve_relation_modifier = 0.3
+	}
+	humanist_tolerance = {
+		tolerance_heathen = 2
+	}
+
+	ai_will_do = {
+		factor = 0.9
+	}
+}
+
+economic_ideas = {
+	category = ADM
+
+	bonus = {
+		embracement_cost = -0.2
+	}
+
+	trigger = {
+		NOT = { has_idea_group = infrasture_ideas }
+	}
+
+	bureaucracy = {
+		interest = -1
+	}
+	organised_construction = {
+		great_project_upgrade_cost = -0.25
+	}
+	national_bank = {
+		inflation_action_cost = -0.1
+		monthly_gold_inflation_modifier = -0.25
+	}
+	debt_and_loans = {
+		interest = -1
+	}
+	centralization = {
+		global_tax_modifier = 0.05
+	}
+	nationalistic_enthusiasm = {
+		advisor_pool = 2
+	}
+	smithian_economics = {	
+	autonomy_change_time = -0.25
+ 	}
+
+	ai_will_do = {
+		factor = 0.85
+	}
+}
+
+infrasture_ideas = {
+	category = ADM
+
+	bonus = {
+		development_cost = -0.1
+	}
+
+	trigger = {
+		NOT = { has_idea_group = economic_ideas }
+	}
+
+	infrasture_ideas_1 = {
+		build_cost = -0.25
+	}
+
+	infrasture_ideas_2 = {
+		global_prosperity_growth = 0.1
+	}
+
+	infrasture_ideas_3 = {
+		global_trade_goods_size_modifier = 0.2
+	}
+
+	infrasture_ideas_4 = {
+		build_time = -0.25
+	}
+
+	infrasture_ideas_5 = {
+		global_trade_goods_size = 0.2
+	}
+
+	infrasture_ideas_6 = {
+		state_maintenance_modifier = -0.25
+	}
+
+	infrasture_ideas_7 = {
+		adm_tech_cost_modifier = -0.1
+	}
+
+	ai_will_do = {
+		factor = 0.85
+	}
+}
+
+improvment_ideas = {
+	category = ADM
+	important = yes
+
+	bonus = {
+		development_cost = -0.1
+	}
+
+	trigger = {
+		NOT = { has_idea_group = expansion_ideas }
+	}
+
+	improvment_ideas_1 = {
+		state_maintenance_modifier = -0.25
+	}
+	improvment_ideas_2 = {
+		inflation_action_cost = -0.5
+	}
+	improvment_ideas_3 = {
+		production_efficiency = 0.05
+	}
+	improvment_ideas_4 = {
+		build_cost = -0.1
+		build_time = -0.1
+	}
+	improvment_ideas_5 = {
+		gold_depletion_chance_modifier = -0.2
+	}
+	improvment_ideas_6 = {
+		great_project_upgrade_cost = -0.25
+	}
+	improvment_ideas_7 = {
+		administrative_efficiency = 0.1
+	}
+
+	ai_will_do = {
+		factor = 0.48
+	}
+}
+
+expansion_ideas = {
+	category = ADM
+	important = yes
+
+	bonus = {
+		native_uprising_chance = -0.25
+	}
+
+	trigger = {
+		NOT = { has_idea_group = improvment_ideas }
+	}
+
+	additional_colonists = {
+		colonists = 1
+	}
+	additional_merchants = {
+		colonist_placement_chance = 0.15
+	}
+	faster_colonists = {
+		global_colonial_growth = 20
+	}
+	factories = {
+		center_of_trade_upgrade_cost = -0.25
+	}
+	additional_diplomats = {
+		diplomatic_upkeep = 2
+	}
+	general_colonization_law  = {
+		colonists = 1
+	}
+	competetive_merchants  = {
+		global_trade_power = 0.2
+	}
+
+	ai_will_do = {
+		factor = 0.48
+		modifier = {
+			factor = 10
+			OR = {
+				has_idea_group = exploration_ideas
+				is_colonial_nation = yes
+			}
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				tag = CAS
+				tag = POR
+				tag = SPA
+			}
+		} 
+		modifier = {
+			factor = 0
+			NOT = { has_idea_group = exploration_ideas }
+			NOT = { is_colonial_nation = yes }
+			NOT = {
+				any_owned_province = {
+					has_empty_adjacent_province = yes
+				}
+			}
+		}
+	}
+}
+
+
+centralization_ideas = {
+	category = ADM
+
+	bonus = {
+		state_governing_cost_increase = -10
+	}
+
+	trigger = {
+		NOT = { has_idea_group = decentralization_ideas }
+	}
+
+	centralization_ideas_1 = {
+		development_cost = -0.05
+	}
+	centralization_ideas_2 = {
+		monthly_reform_progress = 0.5
+	}
+	centralization_ideas_3 = {	
+		core_creation = -0.1
+		ignore_coring_distance = yes
+	}
+	centralization_ideas_4 = {
+		legitimacy = 1
+		republican_tradition = 0.5
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 1
+	}
+	centralization_ideas_5 = {
+		production_efficiency = 0.1
+	}
+	centralization_ideas_6 = {
+		administrative_efficiency = 0.1
+	}
+	centralization_ideas_7 = {
+		global_monthly_devastation = -0.1
+	}
+
+	ai_will_do = {
+		factor = 0.96
+	}
+}
+
+
+decentralization_ideas = {
+	category = ADM
+
+	bonus = {
+		state_maintenance_modifier = -0.33
+	}
+
+	trigger = {
+		NOT = { has_idea_group = centralization_ideas }
+	}
+
+	decentralization_ideas_1 = {
+		governing_cost = 0.75
+	}
+	decentralization_ideas_2 = {
+		enemy_core_creation = 0.2
+		core_decay_on_your_own = -0.2
+	}
+	decentralization_ideas_3 = {
+		monthly_reform_progress = 0.5
+	}
+	decentralization_ideas_4 = {
+		governing_capacity = 100
+	}
+	decentralization_ideas_5 = {
+		move_capital_cost_modifier = -0.25
+	}
+	decentralization_ideas_6 = {
+		governing_capacity_modifier = 0.25
+	}
+	decentralization_ideas_7 = {
+		global_tax_modifier = 0.15
+		global_tax_income = 6
+	}
+
+	ai_will_do = {
+		factor = 0.96
+	}
+}
+
+innovativeness_ideas = {
+	category = ADM
+
+	bonus = {
+		all_power_cost = -0.02
+	}
+
+	trigger = {
+		NOT = { has_idea_group = freeminded_ideas }
+	}
+
+	patron_of_art  = {
+		prestige_decay = -0.01
+	}
+	empiricism = {
+		innovativeness_gain = 0.5
+	}
+	scientific_revolution = {
+		technology_cost = -0.1
+	}
+	dynamic_court = {
+		possible_policy = 1
+	}
+	print_culture = {
+		monthly_splendor = 2
+	}
+	optimism = {
+		war_exhaustion = -0.05
+		free_leader_pool = 1
+	}
+	expanded_policies = {
+		free_policy = 1
+	}
+
+	ai_will_do = {
+		factor = 0.3
+	}
+}
+freeminded_ideas = {
+
+	category = ADM
+
+	bonus = {
+		advisor_cost = -0.25
+	}
+
+	trigger = {
+		NOT = { has_idea_group = innovativeness_ideas }
+	}
+
+	freeminded_ideas_1  = {
+		national_focus_years = -5
+	}
+	freeminded_ideas_2 = {
+		monthly_support_heir_gain = 0.1
+	}
+	freeminded_ideas_3 = {
+		global_institution_spread = 0.25
+		embracement_cost = -0.1
+	}
+	freeminded_ideas_4 = {
+		monarch_admin_power = 1
+		adm_advisor_cost = -0.1
+	}
+	freeminded_ideas_5 = {
+		monarch_diplomatic_power = 1
+		dip_advisor_cost = -0.1
+	}
+	freeminded_ideas_6 = {
+		monarch_military_power = 1
+		mil_advisor_cost = -0.1
+	}
+	freeminded_ideas_7 = {
+		idea_cost = -0.2
+	}
+
+	ai_will_do = {
+		factor = 0.3
+	}
+
+}

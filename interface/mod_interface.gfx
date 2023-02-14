@@ -1,0 +1,63 @@
+SpriteTypes = {
+	spriteType = {
+		name = "GFX_train_network"
+		texturefile = "gfx//interface//buildings//train_network.tga"
+		loadType = "INGAME"
+	}
+    spriteType = {
+        name = "GFX_great_project_plovdiv_bastion"	
+        texturefile = "gfx//interface//great_projects//great_project_plovdiv_bastion.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_trinity_college"	
+        texturefile = "gfx//interface//great_projects//great_project_trinity_college.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_citadel_of_pamplona"	
+        texturefile = "gfx//interface//great_projects//great_project_citadel_of_pamplona.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_drottningholm"	
+        texturefile = "gfx//interface//great_projects//great_project_drottningholm.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_grundtvigs_churc"	
+        texturefile = "gfx//interface//great_projects//great_project_grundtvigs_churc.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_imperial_crypt"	
+        texturefile = "gfx//interface//great_projects//great_project_imperial_crypt.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_suomenlinna"	
+        texturefile = "gfx//interface//great_projects//great_project_suomenlinna.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_wilanow_palace"	
+        texturefile = "gfx//interface//great_projects//great_project_wilanow_palace.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_castel_sant_angelo"	
+        texturefile = "gfx//interface//great_projects//great_project_castel_sant_angelo.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_kuressaare_piiskopilinnus"	
+        texturefile = "gfx//interface//great_projects//great_project_kuressaare_piiskopilinnus.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_duomo_di_siena"	
+        texturefile = "gfx//interface//great_projects//great_project_duomo_di_siena.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_lonja_de_la_seda"	
+        texturefile = "gfx//interface//great_projects//great_project_lonja_de_la_seda.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_danzig_shipyard"	
+        texturefile = "gfx//interface//great_projects//great_project_danzig_shipyard.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_eye_of_sahara"	
+        texturefile = "gfx//interface//great_projects//great_project_eye_of_sahara.dds"
+    }
+}

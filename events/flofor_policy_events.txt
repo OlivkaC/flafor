@@ -1,0 +1,78 @@
+namespace = flofor_policy_events
+country_event = {
+	id = flofor_policy_events.1
+	title = flofor_policy_events.1.t
+	desc = flofor_policy_events.1.d
+	picture = FAMINE_eventPicture
+	
+	
+	trigger = {
+		has_country_modifier = mod_mercantilism
+		mercantilism = 10
+		NOT = { mercantilism = 90 }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = flofor_policy_events.1.a
+		add_mercantilism = 2
+		add_years_of_income = -0.3
+	}
+	option = {
+		name = flofor_policy_events.1.b
+		add_mercantilism = -3
+		add_years_of_income = 0.5
+	}
+}
+country_event = {
+	id = flofor_policy_events.2
+	title = flofor_policy_events.2.t
+	desc = flofor_policy_events.2.d
+	picture = FAMINE_eventPicture
+	
+	
+	trigger = {
+		has_country_modifier = mod_isolationism
+		NOT = { has_country_modifier = trade_p_lack_of_ggods }
+		any_country = {
+			trade_embargoing = ROOT
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 140
+		modifier = {
+			factor = 10
+			full_idea_group = trade_ideas
+		}
+	}
+	immediate = {
+		set_country_flag = chosing_trade_policy
+	}
+
+	option = {
+		name = flofor_policy_events.2.a
+		add_country_modifier = { 
+			name = trade_p_lack_of_goods
+			duration = 3650
+		}
+	}
+
+	option = {
+		name = flofor_policy_events.2.b
+		custom_tooltip = anti_isolationism
+		add_dip_power = -200
+		hidden_effect = {
+			add_country_modifier = { 
+				name = mod_anti_isolationism
+				duration = 3650
+			}
+		}
+	}
+	after = {
+		clr_country_flag = chosing_trade_policy
+	}
+}

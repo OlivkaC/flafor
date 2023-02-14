@@ -1,0 +1,20 @@
+cheese = {
+	base_price = 4
+}
+
+tea = {
+	base_price = 3
+}
+
+
+glass = {
+	base_price = 3.5
+}
+
+gems = {
+	base_price = 4.5
+}
+
+paper = {
+	base_price = 4
+}

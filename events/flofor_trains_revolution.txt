@@ -1,0 +1,53 @@
+namespace = flofor_trains_revolution
+country_event = {
+	id = flofor_trains_revolution.1
+	title = flofor_trains_revolution.1.t
+	desc = flofor_trains_revolution.1.d
+	picture = FAMINE_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+	
+	trigger = {
+		has_institution = enlightenment
+		any_owned_province = {
+			trade_goods = coal
+		}
+		num_of_owned_provinces_with = {
+			value = 10
+			has_building = road_network
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 360
+		modifier = {
+			factor = 0.75
+			innovativeness = 50
+		}
+		modifier = {
+			factor = 0.75
+			tag = GBR
+		}
+		modifier = {
+			factor = 0.9
+			tag = ENG
+		}
+	}
+
+	option = {
+		name = flofor_trains_revolution.1.a
+		add_years_of_income = 1
+		add_prestige = 100
+		change_innovativeness = 10
+		change_price = {
+			trade_goods = coal
+			key = coal_train_usage
+			value = 0.25
+			duration = -1
+		}
+		custom_tooltip = train_network_build
+		set_global_flag = trains_to_go
+	}
+}

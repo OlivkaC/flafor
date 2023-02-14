@@ -1,0 +1,134 @@
+seat_of_dracula_foreign = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	
+	#viewer = {
+	#}
+	
+	trigger = {
+		owner = {
+			NOT = { religion = vampires }
+		}
+		any_country = {
+			religion = vampires
+		}
+		religion = vampires
+	}
+	
+	local_missionary_strength = -1
+	
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
+}
+seat_of_dracula_own = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	
+	#viewer = {
+	#}
+	
+	trigger = {
+		religion = vampires
+		owner = {
+			religion = vampires
+		}
+	}
+	
+	local_defensiveness = 1
+	fort_level = 1
+	local_tax_modifier = 0.15
+	local_production_efficiency = 0.15
+	regiment_recruit_speed = -0.25
+	
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
+}
+vam_new_muscovy = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	
+	#viewer = {
+	#}
+	
+	trigger = {
+		religion = vampires
+		owner = {
+			religion = vampires
+		}
+	}
+	
+	local_tax_modifier = 0.10
+	local_production_efficiency = 0.10
+	province_trade_power_modifier = 0.1
+	local_development_cost_modifier = -0.25
+	
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
+}
+vam_berserks = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		religion = norse_pagan_reformed
+		owner = {
+			religion = vampires
+		}
+	}
+	
+	local_missionary_strength = -1
+	local_religious_unity_contribution = -1
+	
+	
+	discipline = 0.1
+	shock_damage = 0.2
+	reinforce_cost_modifier = -0.10
+	
+	on_activation = {
+	
+	}
+	
+	
+}
+hungarian_orthodox = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		religion = orthodox
+		owner = {
+			religion_group = christian
+			NOT = { religion = orthodox }
+		}
+	}
+	
+	local_missionary_strength = -0.05
+	local_religious_unity_contribution = 1
+	local_unrest = 2
+	tolerance_heretic = -0.5
+	
+	on_deactivation = {
+		remove_province_triggered_modifier = hungarian_orthodox
+	}
+}

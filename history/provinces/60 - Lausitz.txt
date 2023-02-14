@@ -1,0 +1,28 @@
+#60 - Lausitz
+
+owner = SOR
+controller = SOR
+add_core = SOR
+add_core = BOH
+capital = "Bautzen"
+culture = sorbian
+religion = catholic
+trade_goods = cloth
+hre = yes
+base_tax = 1
+base_production = 4
+base_manpower = 3
+is_city = yes
+discovered_by = KAZ
+discovered_by = CRI
+discovered_by = GOL
+discovered_by = AST
+discovered_by = QAS
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+
+
+1419.12.1 = { unrest = 10 } # Hussite Wars, Battle of Nekmir
+1436.7.5 = { unrest = 0 } # Peace is signed in Jihlava

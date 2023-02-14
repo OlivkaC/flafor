@@ -1,0 +1,114 @@
+city = {
+	local_tax_modifier = 0.2
+	allowed_num_of_buildings = 0
+	local_sailors_modifier = 0.25
+	garrison_growth = 0.05
+	allowed_num_of_manufactories = 0.5
+	allowed_num_of_buildings = 1
+}
+
+development = {
+	province_trade_power_modifier = 0.05
+	allowed_num_of_buildings = 0.2
+	allowed_num_of_manufactories = 0.05
+	supply_limit_modifier = 0.1
+	local_missionary_strength = -0.001
+	land_forcelimit	= 0.06			# special case, affected by autonomy
+	naval_forcelimit = 0.05			# special case, affected by autonomy & set to 0 by code if not port
+	local_sailors = 60			# special case, affected by autonomy & set to 0 by code if not port
+	province_trade_power_value = 0.2
+	local_amount_of_banners = 0.066
+	local_amount_of_cawa = 0.125
+	local_amount_of_carolean = 0.1
+	local_amount_of_hussars = 0.01
+	
+}
+
+development_scaled = {
+	local_development_cost = 0.13
+}
+
+war_taxes = {
+	land_maintenance_modifier = -0.33
+	naval_maintenance_modifier = -0.33
+	merc_maintenance_modifier = -0.1
+}
+
+legitimacy = {
+	global_unrest = -6
+	tolerance_own = 2
+	tolerance_heathen = 2
+	tolerance_heretic = 2
+	diplomatic_reputation = 4
+	vassal_income = 0.1
+	monthly_militarized_society = 0.05
+	max_absolutism = 20
+	nobles_loyalty_modifier = 0.1
+}
+
+curia_controller = {
+	diplomats = 1							#1 extra diplomat as curia controller
+	prestige = 2							#1% extra prestige yearly
+	stability_cost_modifier = -0.1			#10% cheaper stability
+	advisor_pool = 2
+	advisor_cost = -0.3
+	free_leader_pool = 1
+	ae_impact = -0.2
+	technology_cost = -0.2
+	church_loyalty_modifier = 0.2
+	papal_influence = 1
+	years_of_nationalism = -5
+}
+
+embargo_rivals = {
+	embargo_efficiency = 0.25
+}
+
+bought_indulgence = {
+	papal_influence = 1
+	unrest_catholic_provinces = -2
+}
+
+over_extension = {
+	global_foreign_trade_power = -1.0
+	stability_cost_modifier = 0.5
+	mercenary_cost = 0.5
+	diplomatic_reputation = -2
+	improve_relation_modifier = -0.5
+	global_unrest = 5
+	bureaucrats_influence = 0.5
+	mr_guilds_influence = 0.5
+	yearly_corruption = 0.5
+	core_creation = -0.1
+}
+
+prestige = {
+	global_trade_power = 0.15			
+	land_morale = 0.1
+	naval_morale = 0.1
+	global_spy_defence = 0.1				
+	legitimacy = 1.0
+	improve_relation_modifier = 0.5
+	monthly_fervor_increase = 1
+	ae_impact = -0.10
+	embracement_cost = -0.1
+
+	monthly_heir_claim_increase = 0.05
+	core_creation = -0.1
+
+	brahmins_hindu_loyalty_modifier = 0.05
+	brahmins_muslim_loyalty_modifier = 0.05
+	brahmins_other_loyalty_modifier = 0.05
+	church_loyalty_modifier = 0.05
+	maratha_loyalty_modifier = 0.05
+	nobles_loyalty_modifier = 0.05
+	burghers_loyalty_modifier = 0.05
+	vaisyas_loyalty_modifier = 0.05
+	cossacks_loyalty_modifier = 0.05
+	nomadic_tribes_loyalty_modifier = 0.05
+	dhimmi_loyalty_modifier = 0.05
+	jains_loyalty_modifier = 0.05
+	rajput_loyalty_modifier = 0.05
+
+}
+

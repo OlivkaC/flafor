@@ -1,0 +1,62 @@
+namespace = mod_cheese_apear
+country_event = {
+	id = mod_cheese_apear.1
+	title = mod_cheese_apear.1.t
+	desc = mod_cheese_apear.1.d
+	picture = FAMINE_eventPicture
+	
+	trigger = {
+		is_year = 1450
+		any_owned_province = {
+			OR = {
+				trade_goods = livestock 
+				trade_goods = fish 
+				trade_goods = grain 
+			}
+		}
+		NOT = { has_country_flag = cheese_hype }
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+		modifier = {
+			factor = 0.01
+			tag = SWI
+		}
+	}
+
+	option = {
+		name = mod_cheese_apear.1.a
+		random_owned_province = {
+			limit = { 
+				OR = {
+					trade_goods = livestock 
+					trade_goods = fish 
+					trade_goods = grain 
+				}
+			}
+			add_province_modifier = { 
+				name = cheese_hype_mod
+				duration = 3650
+			}
+			change_trade_goods = cheese
+			add_base_production = 3
+		}
+		every_owned_province  = {
+			limit = { trade_goods = cheese }
+			add_province_modifier = { 
+				name = cheese_hype_mod
+				duration = 1825
+			}
+		}
+		hidden_effect = {
+			change_price = {
+				trade_goods = cheese
+				key = cheese_hype_key
+				value = 0.004
+				duration = -1
+			}
+		}
+		set_country_flag = cheese_hype
+	}
+}

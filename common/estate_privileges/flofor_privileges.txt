@@ -1,0 +1,75 @@
+estate_burghers_sieze = {
+	icon = privilege_decentralized
+	max_absolutism = -5
+	influence = 0.05
+	loyalty = 0.15
+	land_share = 5
+	can_select = {
+		NOT = {
+			has_estate_privilege = estate_cleregy_sieze
+			has_estate_privilege = estate_nobles_sieze
+		}
+	}
+	benefits = { 
+		production_efficiency = 0.2
+	}
+	penalties = {
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+	cooldown_years = 50
+	ai_will_do = {
+		factor = 0
+	}
+}
+estate_cleregy_sieze = {
+	icon = privilege_decentralized
+	max_absolutism = -5
+	influence = 0.05
+	loyalty = 0.15
+	land_share = 5
+	can_select = {
+		NOT = {
+			has_estate_privilege = estate_burghers_sieze
+			has_estate_privilege = estate_nobles_sieze
+		}
+	}
+	benefits = { 
+		global_tax_modifier = 0.2
+	}
+	penalties = {
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+	cooldown_years = 50
+	ai_will_do = {
+		factor = 0
+	}
+}
+estate_nobles_sieze = {
+	icon = privilege_decentralized
+	max_absolutism = -5
+	influence = 0.05
+	loyalty = 0.15
+	land_share = 5
+	can_select = {
+		NOT = {
+			has_estate_privilege = estate_burghers_sieze
+			has_estate_privilege = estate_nobles_sieze
+		}
+	}
+	benefits = { 
+		global_manpower_modifier  = 0.2
+	}
+	penalties = {
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+	cooldown_years = 50
+	ai_will_do = {
+		factor = 0
+	}
+}

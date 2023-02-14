@@ -1,0 +1,223 @@
+vampires_ascedant = {
+    icon = vampire_gov
+	
+    potential = {
+        religion = vampires
+    }
+
+    fixed_rank = 2
+	lock_level_when_selected = yes
+		
+    modifiers = {
+		global_manpower_modifier = -0.25
+		global_unrest = -2
+		no_stability_loss_on_monarch_death = yes
+		relation_with_heretics = -25
+		relation_with_heathens = -25
+		warscore_cost_vs_other_religion = -0.1
+    }
+    
+    custom_attributes = {
+		raze_province = yes
+		allow_convert = no
+		queen = no
+		maintain_dynasty = yes
+		locked_government_type = yes
+    }
+}
+vampire_empire = {
+    icon = vampire_gov
+	
+    potential = {
+        has_country_flag = formed_wampires_flag
+    }
+
+    fixed_rank = 3
+	lock_level_when_selected = yes
+		
+    modifiers = {
+		max_absolutism = 30
+		yearly_absolutism = 0.25
+		heir_chance = 1
+		core_creation = -0.1
+    }
+}
+
+iberian_nation = {
+	icon = "states_general"
+	allow_normal_conversion = yes
+	
+	potential = {
+		OR = {
+			has_country_flag = iberian_nation
+			has_reform = iberian_nation
+		}
+	}
+	
+	trigger = {
+		NOT = { has_country_modifier = iberian_nation_mod }
+	}
+
+    fixed_rank = 3
+	lock_level_when_selected = yes
+	
+	modifiers = {
+		envoy_travel_time = -0.25
+		administrative_efficiency = 0.1
+		free_policy = 1
+		liberty_desire_from_subject_development = -0.5
+		reduced_liberty_desire = 10
+		possible_policy = 2
+		global_autonomy = -0.05
+		can_colony_boost_development = yes
+		years_to_integrate_personal_union = -25
+		no_stability_loss_on_monarch_death = yes
+	}
+    
+    custom_attributes = {
+		maintain_dynasty = yes
+		locked_government_type = yes
+    }
+
+	ai = {
+		factor = 1
+	}
+}
+
+bohemian_crown = {
+	icon = "states_general"
+	allow_normal_conversion = yes
+	
+	potential = {
+		OR = {
+			tag = BOH
+			has_reform = bohemian_crown
+		}
+	}
+	
+	modifiers = {
+		liberty_desire_from_subject_development = -0.33
+		diplomatic_upkeep = 1
+		global_heretic_missionary_strength = 0.03
+		missionaries = 1
+	}
+
+	ai = {
+		factor = 1
+	}
+}
+
+voivede_principality = {
+	icon = "states_general"
+	allow_normal_conversion = yes
+	
+	potential = {
+		OR = {
+			is_subject_of = BOH 
+			is_subject_of = POL
+			is_subject_of = HUN 
+			is_subject_of_type = voivedeship
+		}
+	}
+	
+    fixed_rank = 1
+	
+	modifiers = {
+		global_missionary_strength = 0.01
+		liberty_desire = -10
+		global_tax_modifier = 0.15
+		production_efficiency = 0.15
+		infantry_cost = -0.10
+		infantry_power = 0.10
+	}
+
+	ai = {
+		factor = 1000
+	}
+}
+
+armed_neutrality = {
+	icon = "states_general"
+	allow_normal_conversion = yes
+	
+	potential = {
+		is_subject = no
+	}
+	
+	modifiers = {
+		can_not_declare_war = yes
+		global_unrest = -2
+		stability_cost_modifier = -0.25
+		global_institution_spread = 0.1
+		all_estate_influence_modifier = -0.1
+		all_estate_loyalty_equilibrium = 0.1
+		no_religion_penalty = yes
+	}
+
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 1000
+			tag = SWI
+		}
+		modifier = {
+			factor = 0
+			NOT = { tag = SWI }
+		}
+	}
+}
+
+theme_system_gov = {
+	icon = "states_general"
+	allow_normal_conversion = yes
+	
+	potential = {
+		OR = {
+			tag = BYZ
+			has_reform = theme_system_gov
+		}
+	}
+	
+	lock_level_when_selected = yes
+	
+	modifiers = {
+		land_forcelimit_modifier = 0.10
+		merc_maintenance_modifier = -0.10
+		mercenary_manpower = 0.50
+		state_maintenance_modifier = -0.25
+		state_governing_cost = -0.1
+		diplomats = 1
+	}
+	custom_attributes = {
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+yugoslavian_state = {
+	icon = "states_general"
+	allow_normal_conversion = yes
+	
+	potential = {
+		OR = {
+			tag = JUG
+			has_reform = yugoslavian_state
+		}
+	}
+	
+	lock_level_when_selected = yes
+	
+	modifiers = {
+		land_maintenance_modifier = -0.10
+		leader_land_fire = 2
+		leader_siege  = 2
+		loot_amount = 0.25
+	}
+	custom_attributes = {
+		militarised_society = yes
+	}
+	ai = {
+		factor = 1
+	}
+}

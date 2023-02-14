@@ -1,0 +1,52 @@
+
+vampire_conquest_wargoal = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 1.25
+		prestige_factor = 0.5
+		peace_cost_factor = 0.5
+	
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	
+	defender = {
+		badboy_factor = 0.75
+		prestige_factor = 1
+		peace_cost_factor = 2
+	
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	
+	war_name = VAMPIRE_INVASION_NAME
+}
+
+push_back_vampires_wargoal = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 0.75
+		prestige_factor = 1
+		peace_cost_factor = 2
+	
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	
+	defender = {
+		badboy_factor = 1
+		prestige_factor = .75
+		peace_cost_factor = .75
+	
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	
+	war_name = PUSH_BACK_VAMPIRES_NAME
+}

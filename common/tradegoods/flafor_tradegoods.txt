@@ -1,0 +1,26 @@
+cheese = {
+	color = { 1 1 0.49 }
+	modifier = {
+		trade_steering = 0.25
+	}
+	province = {
+		trade_value_modifier = 0.1
+	}
+	chance = {
+		factor = 25
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = cheese_hype }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					continent = north_america
+					continent = south_america
+					continent = new_world
+				}
+			}
+		}
+	}
+}

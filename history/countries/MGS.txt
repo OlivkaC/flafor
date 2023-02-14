@@ -1,0 +1,5 @@
+government_rank = 2
+primary_culture = madagasque
+technology_group = east_african
+unit_type = sub_saharan
+capital = 1792

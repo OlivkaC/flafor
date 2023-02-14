@@ -1,0 +1,11 @@
+government = monarchy
+add_government_reform = voivede_principality
+primary_culture = czech
+religion = catholic
+government_rank = 1
+capital = 4237 # Olomouc
+technology_group = western
+historical_friend = BOH
+historical_rival = OPL
+historical_rival = GLG
+historical_rival = SOR

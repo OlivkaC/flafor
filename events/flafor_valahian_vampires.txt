@@ -1,0 +1,599 @@
+namespace = flafor_valahian_vampires
+
+country_event = {
+	id = flafor_valahian_vampires.0
+	title = flafor_valahian_vampires.0.t
+	desc = flafor_valahian_vampires.0.d
+	picture = FAMINE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		dynasty = "Draculesti"
+		NOT = { religion = vampires }
+		NOT = { has_country_flag = vampire_return }
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		set_country_flag = vampire_return
+	}
+	
+	option = {
+		name = flafor_valahian_vampires.0.a
+		change_religion = vampires
+		change_adm = 2
+		change_dip = 2
+		change_mil = 2
+		add_ruler_personality = immortal_personality
+		define_heir = {
+			dynasty = "Draculesti"
+			age = 15
+			claim = 100
+			no_consort_with_heir = yes
+		}
+		custom_tooltip = vampires_religion_takeover
+		hidden_effect = {
+			every_owned_province = {
+				limit = { religion_group = christian }
+				change_religion = vampires
+			}
+			capital_scope = {
+				add_province_triggered_modifier = seat_of_dracula_own
+				add_province_triggered_modifier = seat_of_dracula_foreign
+				add_building = fort_16th
+			}
+		}
+		add_country_modifier = { 
+			name = return_of_vampires
+			duration = -1 
+		}
+		
+		if = {
+			limit = { NOT = { government = monarchy } }
+			
+			change_government = monarchy
+		}
+		
+		add_government_reform = vampires_ascedant
+		swap_non_generic_missions = yes
+		
+		ai_chance = { 
+			factor = 1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.0.b
+		exile_ruler_as = vam_exiled
+		add_country_modifier = { 
+			name = fear_of_vampires
+			duration = 73000 
+		}
+	}
+}
+country_event = {
+	id = flafor_valahian_vampires.1
+	title = flafor_valahian_vampires.1.t
+	desc = flafor_valahian_vampires.1.d
+	picture = FAMINE_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flafor_valahian_vampires.1.a
+		add_years_of_income = 0.5
+		295 = {
+			add_devastation = 100
+			set_base_tax = 1
+			set_base_production = 1
+			set_base_manpower = 1
+		}
+		add_country_modifier = {
+			name = vam_burnt_muscovy
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.1.b
+		moscow_area = {
+			add_core = ROOT
+			change_religion = vampires
+		}
+		295 = {
+			add_province_triggered_modifier = vam_new_muscovy
+		}
+		add_adm_power = 75
+		add_dip_power = 75
+		add_mil_power = 75
+		add_country_modifier = {
+			name = vam_new_muscovy
+			duration = -1
+		}
+	}
+}
+country_event = {
+	id = flafor_valahian_vampires.2
+	title = flafor_valahian_vampires.2.t
+	desc = flafor_valahian_vampires.2.d
+	picture = FAMINE_eventPicture
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	trigger = {
+		religion = vampires
+		OR = {
+			had_ruler_flag = {
+				flag = improve_vampire
+				days = 7300
+			}
+			NOT = { has_ruler_flag = improve_vampire }
+		}
+		OR = {
+			NOT = { adm = 8 }
+			NOT = { dip =  8 }
+			NOT = { mil = 8 }
+		}
+	}
+	
+	immediate = {
+		set_ruler_flag = improve_vampire
+	}
+	
+	option = {
+		name = flafor_valahian_vampires.2.a
+		if = {
+			limit = { adm = 8 }
+			if = {
+				limit = { dip = 8}
+				change_mil = 1
+			}
+			else_if = { 
+				limit = { mil = 8 }
+				change_dip = 1
+			}
+			else = {
+				random_list = {
+					1 = { change_dip = 1 }
+					1 = { change_mil = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = { dip = 8 }
+			if = {
+				limit = { mil = 8}
+				change_adm = 1
+			}
+			else = {
+				random_list = {
+					1 = { change_adm = 1 }
+					1 = { change_mil = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = { mil = 8 }
+			random_list = {
+				1 = { change_adm = 1 }
+				1 = { change_dip = 1 }
+			}
+		}
+		else = {
+			random_list = {
+				1 = { change_adm = 1 }
+				1 = { change_dip = 1 }
+				1 = { change_mil = 1 }
+			}
+		}
+	}
+}
+country_event = {
+	id = flafor_valahian_vampires.3
+	title = flafor_valahian_vampires.3.t
+	desc = flafor_valahian_vampires.3.d
+	picture = FAMINE_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flafor_valahian_vampires.3.a
+		set_country_flag = formed_wampires_flag
+		remove_non_electors_emperors_from_empire_effect = yes
+		add_country_modifier = {
+			name = "centralization_modifier"
+			duration = 7300
+		}
+		add_government_reform = vampire_empire
+		add_prestige = 25
+		change_tag = VAM
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 }
+		}
+		country_event = {
+			id = flafor_valahian_vampires.4
+			days = 1
+		}
+	}
+}
+country_event = {
+	id = flafor_valahian_vampires.4
+	title = flafor_valahian_vampires.4.t
+	desc = flafor_valahian_vampires.4.e
+	picture = FAMINE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flafor_valahian_vampires.4.a
+		trigger = { NOT = { has_country_flag = vam_missiontree_2 } }
+		set_country_flag = vam_missiontree_2
+		134 = {
+			add_permanent_claim = ROOT
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.4.b
+		trigger = { NOT = { has_country_flag = vam_missiontree_3 } }
+		set_country_flag = vam_missiontree_3
+		
+		add_country_modifier = {
+			name = vam_explore_new_world
+			duration = -1
+		}
+		
+	}
+	option = {
+		name = flafor_valahian_vampires.4.c
+		trigger = { NOT = { has_country_flag = vam_missiontree_4 } }
+		set_country_flag = vam_missiontree_4
+		hudavendigar_area = {
+			add_permanent_claim = ROOT
+		}
+		
+	}
+	option = {
+		name = flafor_valahian_vampires.4.d
+		trigger = {
+			has_country_flag = vam_missiontree_2
+			has_country_flag = vam_missiontree_3
+			has_country_flag = vam_missiontree_4
+		}
+		set_country_flag = vam_missiontree_ultimate
+	}
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+country_event = {
+	id = flafor_valahian_vampires.5
+	title = flafor_valahian_vampires.5.t
+	desc = flafor_valahian_vampires.5.d
+	picture = FAMINE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flafor_valahian_vampires.5.a
+		add_prestige = 50
+		add_years_of_income = 1
+		define_advisor = {
+			type = natural_scientist
+			name = "Elizabeth Draculetih"
+			skill = 3
+			female = yes
+			discount = yes
+			culture = cosmopolitan_french
+			religion = vampires
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.5.b
+		add_prestige = 50
+		add_years_of_income = -1
+		define_heir = {
+			name = "Elizabeth"
+			dynasty = ROOT
+			age = 75
+			adm = 6
+			dip = 6
+			mil = 6
+			claim = 80
+			female = yes
+			no_consort_with_heir = yes
+			culture = cosmopolitan_french
+			religion = vampires
+		}
+		hidden_effect = {
+			add_heir_personality = immortal_personality
+		}
+		set_country_flag = vam_elizabeth_at_power
+	}
+}
+country_event = {
+	id = flafor_valahian_vampires.6
+	title = flafor_valahian_vampires.6.t
+	desc = flafor_valahian_vampires.6.d
+	picture = FAMINE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flafor_valahian_vampires.6.a
+		118 = {
+			add_devastation = 100
+			set_base_tax = 1
+			set_base_production = 1
+			set_base_manpower = 1
+		}
+		every_country = {
+			limit = { religion = catholic }
+			add_opinion = {
+				who = ROOT
+				modifier = vam_catholic_raze
+			}
+		}
+		add_country_modifier = {
+			name = vam_christianity_colapse
+			duration = -1
+		}
+	}
+}
+country_event = {
+	id = flafor_valahian_vampires.7
+	title = flafor_valahian_vampires.7.t
+	desc = flafor_valahian_vampires.7.d
+	picture = FAMINE_eventPicture
+	
+	is_triggered_only = yes
+	option = {
+		name = flafor_valahian_vampires.7.pommeranian
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = pommeranian
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.7.lower_saxon
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = lower_saxon
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.7.hannoverian
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = hannoverian
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.7.hessian
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = hessian
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.7.saxon
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = saxon
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.7.franconian
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = franconian
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.7.swabian
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = swabian
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.7.swiss
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = swiss
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.7.bavarian
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = bavarian
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.7.austrian
+		custom_tooltip = vam_germans
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = south_german_region
+						region = north_german_region
+					}
+				}
+				change_culture = austrian
+			}
+		}
+		add_dip_power = -500
+		add_years_of_income = -2
+		add_country_modifier = {
+			name = vam_germanic_solidarity
+			duration = -1
+		}
+	}
+}
+country_event = {
+	id = flafor_valahian_vampires.8
+	title = flafor_valahian_vampires.8.t
+	desc = flafor_valahian_vampires.8.d
+	picture = FAMINE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flafor_valahian_vampires.8.a
+		1 = {
+			add_province_triggered_modifier = vam_berserks
+			change_religion = norse_pagan_reformed
+		}
+	}
+	
+	option = {
+		name = flafor_valahian_vampires.8.b
+			add_country_modifier = {
+				name = vam_berserks_ctr
+				duration = 3650
+			}
+			1 = {
+				change_religion = norse_pagan_reformed
+				add_permanent_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 7300
+				}
+			}
+	}
+}

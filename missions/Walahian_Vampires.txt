@@ -1,0 +1,669 @@
+valahain_vamp_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		religion = vampires
+	}
+
+	vamp_2_2 = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { vamp_3_1 }
+		provinces_to_highlight = {
+			area = southern_transylvania_area
+			NOT = {	owned_by = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			southern_transylvania_area = {
+				type = all
+				owned_by = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			transylvania_area = {
+				add_core = ROOT
+			}
+		}
+	}
+	vamp_2_3 = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { vamp_2_2 }
+		provinces_to_highlight = {
+			area = transylvania_area
+			NOT = {	owned_by = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			transylvania_area = {
+				type = all
+				owned_by = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = vam_homland_restorance
+				duration = 7300
+			}
+			add_accepted_culture = transylvanian
+		}
+	}
+	vamp_2_4 = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { vamp_2_3 }
+		provinces_to_highlight = {
+			province_id = 4128
+		}
+		trigger = {
+			4128 = {
+				has_great_project = {
+					type = bran_castle
+					tier = 3
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = vam_first_bastion
+				duration = -1
+			}
+			4128 = {
+				add_latest_building = { builder = ROOT fort = yes }
+			}
+		}
+	}
+}
+
+valahain_vamp_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		religion = vampires
+	}
+
+	vamp_3_1 = {
+		icon = mission_alliances
+		position = 1
+		required_missions = {  }
+		provinces_to_highlight = {
+			OR = {
+				area = wallachia_area
+				area = moldavia_area
+			}
+			NOT = {	owned_by = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			wallachia_area = {
+				type = all
+				owned_by = ROOT
+				religion = vampires
+			}
+			moldavia_area = {
+				type = all
+				owned_by = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			southern_transylvania_area = {
+				add_core = ROOT
+			}
+			yedisan_area = {
+				add_permanent_claim = ROOT
+			}
+			podolia_volhynia_area = {
+				add_permanent_claim = ROOT
+			}
+			silistria_area = {
+				add_permanent_claim = ROOT
+			}
+			bulgaria_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	vamp_3_2 = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { vamp_3_1 }
+		provinces_to_highlight = {
+			OR = {
+				area = podolia_volhynia_area
+				area = yedisan_area
+			}
+			NOT = {	owned_by = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			podolia_volhynia_area = {
+				type = all
+				owned_by = ROOT
+				religion = vampires
+			}
+			yedisan_area = {
+				type = all
+				owned_by = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			custom_tooltip = vam_conqust_ruthenia_ef
+			hidden_effect = {
+				every_province = {
+					limit = {
+						culture = ruthenian
+						NOT = { is_permanent_claim = ROOT	}
+						NOT = { is_core = ROOT	}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	vamp_3_3 = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { vamp_3_2 }
+		provinces_to_highlight = {
+			culture = ruthenian
+			NOT = {	owned_by = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vam_conqust_rutheni_tri
+				all_province = {
+					if = {
+						limit = { culture = ruthenian }
+						owned_by = ROOT
+						religion = vampires
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = vam_slovaks_assimilated
+				duration = 7300
+			}
+			add_accepted_culture = ruthenian
+			if = {
+				limit = {
+					295 = {
+						NOT = { is_permanent_claim = ROOT	}
+						NOT = { is_core = ROOT	}
+					}
+				}
+				295 = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	vamp_3_5 = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { vamp_2_4 vamp_3_4 vamp_4_4 }
+		trigger = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			NOT = { exists = VAM }
+			prestige = 100
+		}
+		effect = {
+			remove_country_modifier = return_of_vampires
+			add_country_modifier = {
+				name = vampires_victorious
+				duration = -1
+			}
+			country_event = {
+				id = flafor_valahian_vampires.3
+			}
+		}
+	}
+	vamp_3_4 = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { vamp_3_3 }
+		provinces_to_highlight = {
+			province_id = 295
+		}
+		trigger = {
+			295 = {
+				controlled_by  = ROOT
+				owner = {
+					war_with = ROOT
+					NOT = { war_score = -30 }
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = flafor_valahian_vampires.1
+			}
+		}
+	}
+}
+
+valahain_vamp_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		religion = vampires
+	}
+
+	vamp_4_2 = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { vamp_3_1 }
+		provinces_to_highlight = {
+			OR = {
+				area = silistria_area
+				area = bulgaria_area
+			}
+			NOT = {	owned_by = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			silistria_area = {
+				type = all
+				owned_by = ROOT
+				religion = vampires
+			}
+			bulgaria_area = {
+				type = all
+				owned_by = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			thrace_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_greece_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			macedonia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	vamp_4_3 = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { vamp_4_2 }
+		provinces_to_highlight = {
+			OR = {
+				area = thrace_area
+				area = northern_greece_area
+				area = macedonia_area
+				area = morea_area
+			}
+			NOT = {	owned_by = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			thrace_area = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+			northern_greece_area = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+			macedonia_area = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+			morea_area = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			balkan_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = vam_drive_out_turks
+				duration = 7300
+			}
+		}
+	}
+	vamp_4_4 = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { vamp_4_3 }
+		provinces_to_highlight = {
+			region = balkan_region
+			NOT = {	is_core = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			balkan_region = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = vam_balakans_domination
+				duration = -1
+			}
+		}
+	}
+}
+
+valahain_vamp_2_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		religion = vampires
+		has_country_flag = vam_missiontree_2
+	}
+
+	vamp_2_6 = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { vamp_3_5 }
+		provinces_to_highlight = {
+			province_id = 134
+		}
+		trigger = {
+			134 = {
+				is_core = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			south_german_region = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	vamp_2_7 = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { vamp_2_6 }
+		provinces_to_highlight = {
+			region = south_german_region
+			NOT = {	is_core = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			south_german_region = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			north_german_region = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
+			}
+			italy_region = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	vamp_2_8 = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { vamp_2_7 }
+		provinces_to_highlight = {
+			region = north_german_region
+			NOT = {	is_core = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			north_german_region = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+			dip_power = 500
+			years_of_income = 2
+		}
+		effect = {
+			scandinavia_region = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
+			}
+			country_event = {
+				id = flafor_valahian_vampires.7
+			}
+		}
+	}
+	vamp_2_9 = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { vamp_2_8 }
+		provinces_to_highlight = {
+			region = scandinavia_region
+			NOT = {	is_core = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			scandinavia_region = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			low_countries_region = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
+			}
+			country_event = {
+				id = flafor_valahian_vampires.8
+			}
+		}
+	}
+	vamp_2_10 = {
+		icon = mission_alliances
+		position = 10
+		required_missions = { vamp_2_9 }
+		provinces_to_highlight = {
+			region = low_countries_region
+			NOT = {	is_core = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			low_countries_region = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			add_years_of_income = 2
+			add_country_modifier = {
+				name = vam_cot_upgrade
+				duration = 7300
+			}
+		}
+	}
+	vamp_2_11 = {
+		icon = mission_alliances
+		position = 11
+		required_missions = { vamp_1_10 vamp_2_10 }
+		provinces_to_highlight = {
+			region = low_countries_region
+			NOT = {	is_core = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			OR = {
+				AND = {
+					101 = {
+						is_strongest_trade_power = PREV
+						highest_value_trade_node = yes
+					}
+					112 = {
+						is_strongest_trade_power = PREV
+						highest_value_trade_node = yes
+					}
+				}
+				AND = {
+					236 = {
+						is_strongest_trade_power = PREV
+						highest_value_trade_node = yes
+					}
+					112 = {
+						is_strongest_trade_power = PREV
+						highest_value_trade_node = yes
+					}
+				}
+				AND = {
+					101 = {
+						is_strongest_trade_power = PREV
+						highest_value_trade_node = yes
+					}
+					236 = {
+						is_strongest_trade_power = PREV
+						highest_value_trade_node = yes
+					}
+				}
+			}
+			OR = {
+				monthly_income = 1000
+				trade_income_percentage = 0.50
+			}
+		}
+		effect = {
+			add_prestige = 100
+			add_legitimacy = 50
+			add_country_modifier = {
+				name = vam_catholic_domination
+				duration = -1
+			}
+			country_event = {
+				id = flafor_valahian_vampires.4
+			}
+		}
+	}
+}
+
+valahain_vamp_1_2 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		religion = vampires
+		has_country_flag = vam_missiontree_2
+	}
+
+	vamp_1_8 = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { vamp_2_7 }
+		provinces_to_highlight = {
+			region = italy_region
+			NOT = {	is_core = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			italy_region = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			france_region = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
+			}
+			country_event = {
+				id = flafor_valahian_vampires.6
+			}
+		}
+	}
+	vamp_1_9 = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { vamp_1_8 }
+		provinces_to_highlight = {
+			region = france_region
+			NOT = {	is_core = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			france_region = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			iberia_region = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
+			}
+			country_event = {
+				id = flafor_valahian_vampires.5
+			}
+		}
+	}
+	vamp_1_10 = {
+		icon = mission_build_up_to_force_limit
+		position = 10
+		required_missions = { vamp_1_9 }
+		provinces_to_highlight = {
+			region = iberia_region
+			NOT = {	is_core = ROOT }
+			NOT = { religion = vampires }
+		}
+		trigger = {
+			iberia_region = {
+				type = all
+				is_core = ROOT
+				religion = vampires
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "vam_re_re_recoquista"
+				duration = -1
+			}
+		}
+	}
+}
+

@@ -1,0 +1,52 @@
+# For specific combinations of culture, religion and other such triggers
+# Will pick the first valid one it finds in list
+
+#Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
+
+vampires_ascedant = {
+	rank = {
+		1 = VAMPIRE_STATE
+		2 = VAMPIRE_STATE
+		3 = VAMPIRE_STATE
+	}
+
+	ruler_male = {
+		1 = COUNT_DRACULA
+		2 = COUNT_DRACULA
+		3 = COUNT_DRACULA
+	}
+
+	ruler_female = {
+		1 = COUNTESS_DRACULA
+		2 = COUNTESS_DRACULA
+		3 = COUNTESS_DRACULA
+	}
+
+	consort_male = {
+		1 = CONSORT
+		2 = CONSORT
+		3 = CONSORT
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = CONSORT
+		3 = CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	trigger = {
+		has_reform = vampires_ascedant
+	}
+}

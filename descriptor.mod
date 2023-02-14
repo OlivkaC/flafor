@@ -1,0 +1,18 @@
+version="1"
+tags={
+	"Events"
+	"Balance"
+	"Missions And Decisions"
+	"Historical"
+	"Trade"
+	"Military"
+	"Map"
+	"Religion"
+	"Gameplay"
+	"National Ideas"
+}
+name="flofor"
+replace_path="history/diplomacy"
+replace_path="common/policies"
+supported_version="1.34.3"
+remote_file_id="2881457489"

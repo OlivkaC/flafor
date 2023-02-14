@@ -1,0 +1,113 @@
+country_decisions = {
+	turn_colonial_nations_off = {
+		major = yes
+		potential = {
+			is_former_colonial_nation = no
+			capital_scope = {
+				OR = {
+					continent = europe
+					continent = asia
+					continent = africa
+				} 
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = colony 
+					is_subject_of_type = crown_colony 
+					is_subject_of_type = private_enterprise 
+					is_subject_of_type = self_governing_colony 
+				}
+			}
+			NOT = { has_country_flag = no_colonial_nations }
+			OR = {
+				num_of_colonists = 1
+				num_of_colonies = 1
+				has_subject_of_type = colony 
+				has_subject_of_type = crown_colony 
+				has_subject_of_type = private_enterprise 
+				has_subject_of_type = self_governing_colony
+			} 
+		}
+		allow = {
+			is_at_war = no
+			adm_power = 100
+			stability = 0
+		}
+		effect = {
+			set_country_flag = no_colonial_nations
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							is_subject_of_type_with_overlord = { who = ROOT type = colony }
+							is_subject_of_type_with_overlord = { who = ROOT type = crown_colony }
+							is_subject_of_type_with_overlord = { who = ROOT type = private_enterprise }
+							is_subject_of_type_with_overlord = { who = ROOT type = self_governing_colony }
+						}
+					}
+				}
+				add_stability = -2
+			}
+			custom_tooltip = colonies_off_tooltip
+			hidden_effect  = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							is_subject_of_type = colony
+							is_subject_of_type = crown_colony
+							is_subject_of_type = private_enterprise
+							is_subject_of_type = self_governing_colony
+						}
+					}
+					ROOT = {
+						add_stability = -1
+						inherit = PREV
+					}
+				}
+			}
+			add_adm_power = -100
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	turn_colonial_nations_on = {
+		major = yes
+		potential = {
+			is_former_colonial_nation = no
+			capital_scope = {
+				OR = {
+					continent = europe
+					continent = asia
+					continent = africa
+				} 
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = colony 
+					is_subject_of_type = crown_colony 
+					is_subject_of_type = private_enterprise 
+					is_subject_of_type = self_governing_colony 
+				}
+			}
+			has_country_flag = no_colonial_nations
+			OR = {
+				num_of_colonists = 1
+				num_of_colonies = 1
+			} 
+		}
+		allow = {
+			is_at_war = no
+			adm_power = 100
+			stability = -2
+		}
+		effect = {
+			clr_country_flag = no_colonial_nations
+			add_stability = -1
+			add_adm_power = -100
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

@@ -1,0 +1,30 @@
+cb_vampire_conquest = {
+	valid_for_subject = no
+
+	prerequisites = {
+		religion = vampires
+		FROM = { 
+			is_neighbor_of = ROOT
+			NOT = {
+				religion = vampires
+			}
+		}
+	}
+
+	war_goal = vampire_conquest_wargoal
+}
+cb_push_back_vampires= {
+	valid_for_subject = no
+
+	prerequisites = {
+		NOT = {
+			religion = vampires
+		}
+		FROM = {
+			religion = vampires
+			is_neighbor_of = ROOT
+		}
+	}
+
+	war_goal = push_back_vampires_wargoal
+}

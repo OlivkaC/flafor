@@ -1,0 +1,11 @@
+government = monarchy
+add_government_reform = voivede_principality
+government_rank = 1
+technology_group = western
+primary_culture = schlesian
+religion = catholic
+capital = 2966
+historical_friend = BOH
+historical_rival = OPL
+historical_rival = SOR
+historical_rival = MVA

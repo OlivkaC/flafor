@@ -1,0 +1,147 @@
+namespace = flafor_flavor
+
+
+country_event = {
+	id = flafor_flavor.0 #tea importance growth
+	title = flafor_flavor.0.t
+	desc = flafor_flavor.0.d
+	
+	picture = HOUSE_OF_TRADE_eventPicture
+	
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 48
+
+		modifier = {
+			factor = 0.5
+			tag = GBR
+		}
+		modifier = {
+			factor = 0.75
+			OR = {
+				tag = ENG
+				tag = SCO
+			}
+		}
+	}
+	trigger = {
+		capital_scope = {
+			region = british_isles_region
+		}
+		any_owned_province = { 
+			OR = {
+				development = 10
+				trade_goods = tea
+			}
+			region = british_isles_region
+		}
+		OR = {
+			south_china_region = { has_discovered = ROOT }
+			north_china_region = { has_discovered = ROOT }
+		}
+	}
+	
+	major = yes
+	
+	option = {
+		name = flafor_flavor.0.a #let the tea be!
+		set_country_flag = tea_import
+		add_years_of_income = 0.6
+		random_owned_province = { 
+			limit = { 
+				AND = {
+					development = 20 
+					OR = {
+						trade_goods = livestock
+						trade_goods = grain
+						trade_goods = fish
+						trade_goods = wine
+					}
+					region = british_isles_region
+				}
+			}
+			change_trade_goods = tea
+			add_base_production = 2
+		}
+		every_owned_province = { 
+			limit = { 
+				AND = {
+					development = 10 
+					OR = {
+						trade_goods = livestock
+						trade_goods = grain
+						trade_goods = fish
+						trade_goods = wine
+					}
+					region = british_isles_region
+				}
+			}
+			change_trade_goods = tea
+			add_base_production = 2
+		}
+		every_owned_province = { 
+			limit = { 
+				trade_goods = tea 
+				region = british_isles_region
+			}
+			
+			add_province_modifier = { 
+				name = tea_hype
+				duration = -1
+			}
+		}
+		change_price = {
+			trade_goods = tea
+			key = tea_hype_key
+			value = 1
+			duration = -1
+		}
+	}
+}
+country_event = {
+	id = flafor_flavor.1
+	title = flafor_flavor.1.t
+	desc = flafor_flavor.1.d
+	
+	picture = HOUSE_OF_TRADE_eventPicture
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			tag = SIE
+			tag = LAN
+			tag = TUS
+			tag = ITA
+		}
+		116 = {
+			is_core = ROOT
+			has_great_project = {
+				type = santa_maria_del_fiore
+				tier = 1
+			}
+		}
+		117 = {
+			is_core = ROOT
+			has_great_project = {
+				type = duomo_di_siena
+				tier = 1
+			}
+		}
+	}
+	
+	major = yes
+	
+	option = {
+		name = flafor_flavor.1.a
+		add_prestige = 100
+		add_country_modifier = {
+			name = the_better_cathedra
+			duration = -1
+		}
+	}
+}

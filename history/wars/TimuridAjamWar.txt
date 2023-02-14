@@ -1,0 +1,32 @@
+name = "Thimurids Rebels Suppresion War"
+war_goal = {
+	type = take_core_defection
+	casus_belli = cb_defection
+	province = 2213
+}
+
+1440.1.1 = {
+	add_attacker = TIM
+	add_attacker = TRS
+	add_attacker = AFG
+	add_attacker = SIS
+	add_attacker = KHO
+	add_attacker = FRS
+	add_attacker = SIS
+	add_defender = QOM
+	add_defender = LRI
+	add_defender = ARD
+}
+# Ahmad goes home
+1447.4.1 = {
+	rem_attacker = TIM
+	rem_attacker = TRS
+	rem_attacker = AFG
+	rem_attacker = SIS
+	rem_attacker = FRS
+	rem_attacker = SIS
+	rem_attacker = KHO
+	rem_defender = QOM
+	rem_defender = LRI
+	rem_defender = ARD
+}

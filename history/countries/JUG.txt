@@ -1,0 +1,4 @@
+government = monarchy
+religion = orthodox
+technology_group = eastern
+capital = 4176

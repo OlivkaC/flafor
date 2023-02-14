@@ -1,0 +1,182 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+# This one is the first for the case that some country manages to become fully Norse.
+
+vam_ideas = {
+	start = {
+		land_morale = 0.15	
+		discipline = 0.05
+	}
+	
+	bonus = {
+		administrative_efficiency = 0.1
+	}
+	
+	trigger = {
+		religion = vampires
+		tag = VAM
+	}
+	free = yes
+	
+	vam_lvl_1 = {
+		manpower_recovery_speed = 0.15
+		war_exhaustion = -0.03
+	}
+	vam_lvl_2 = {
+		monthly_heir_claim_increase = 0.05
+		core_creation = -0.1
+	}
+	vam_lvl_3 = {
+		development_cost = -0.15
+		build_cost = -0.15
+		build_time = -0.15
+	}
+	vam_lvl_4 = {
+		production_efficiency = 0.2
+	}
+	vam_lvl_5 = {
+		country_admin_power = 1
+		adm_advisor_cost = -0.1
+	}
+	vam_lvl_6 = {	
+		country_diplomatic_power = 1
+		dip_advisor_cost = -0.1
+	}
+	vam_lvl_7 = {
+		country_military_power = 1
+		mil_advisor_cost = -0.1
+	}
+}
+mgs_ideas = {
+	start = {
+		trade_range_modifier = 0.25
+		merchants = 1
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		tag = MGS
+	}
+	free = yes
+	
+	mgs_lvl_1 = {
+		development_cost = -0.2
+	}
+	mgs_lvl_2 = {
+		global_trade_power = 0.25
+		global_ship_trade_power = 0.33
+	}
+	mgs_lvl_3 = {
+		land_morale = 0.15
+		naval_morale = 0.15
+	}
+	mgs_lvl_4 = {
+		global_spy_defence = 0.33
+		enemy_core_creation = 2
+	}
+	mgs_lvl_5 = {
+		heavy_ship_power = 0.2
+		own_coast_naval_combat_bonus = 1.0
+	}
+	mgs_lvl_6 = {	
+		missionaries = 1
+		global_missionary_strength = 0.03
+	}
+	mgs_lvl_7 = {
+		all_estate_influence_modifier = -0.1
+		all_estate_loyalty_equilibrium = 0.1
+	}
+}
+ctu_ideas = {
+	start = {
+		monthly_reform_progress_modifier = 0.5
+		global_allowed_num_of_buildings = 2
+	}
+	
+	bonus = {
+		backrow_artillery_damage = 0.10
+	}
+	
+	trigger = {
+		tag = CTU
+	}
+	free = yes
+	
+	ctu_lvl_1 = {
+		development_cost = -0.2
+		governing_cost = -0.4
+	}
+	ctu_lvl_2 = {
+		culture_conversion_cost = -0.25
+		same_culture_advisor_cost = -0.25
+	}
+	ctu_lvl_3 = {
+		land_morale = 0.10
+		infantry_power = 0.10
+	}
+	ctu_lvl_4 = {
+		global_trade_goods_size = 0.5
+		global_trade_goods_size_modifier = 0.25
+	}
+	ctu_lvl_5 = {
+		discipline = 0.05
+	}
+	ctu_lvl_6 = {	
+		artillery_fire = 1
+		artillery_power = 0.10
+	}
+	ctu_lvl_7 = {
+		all_estate_influence_modifier = -0.1
+		all_estate_loyalty_equilibrium = 0.1
+	}
+}
+jug_ideas = {
+	start = {
+		global_missionary_strength = 0.03
+		global_unrest = -2
+	}
+	
+	bonus = {
+		backrow_artillery_damage = 0.25
+	}
+	
+	trigger = {
+		tag = JUG
+	}
+	free = yes
+	
+	jug_lvl_1 = {
+		infantry_cost = -0.15
+		infantry_power = 0.05
+	}
+	jug_lvl_2 = {
+		legitimacy = 1
+		republican_tradition = 0.5
+		devotion = 1
+		yearly_absolutism = 0.1
+	}
+	jug_lvl_3 = {
+		land_morale = 0.10
+		infantry_power = 0.10
+	}
+	jug_lvl_4 = {
+		global_trade_goods_size = 0.5
+		global_trade_goods_size_modifier = 0.25
+	}
+	jug_lvl_5 = {
+		monarch_military_power = 1
+		discipline = 0.05
+	}
+	jug_lvl_6 = {	
+		culture_conversion_cost = -0.25
+	}
+	jug_lvl_7 = {
+		artillery_fire = 2
+		artillery_power = 0.15
+	}
+}
