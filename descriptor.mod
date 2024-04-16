@@ -13,6 +13,5 @@ tags={
 }
 name="flofor"
 replace_path="history/diplomacy"
-replace_path="common/policies"
-supported_version="1.34.3"
+supported_version="1.36.2"
 remote_file_id="2881457489"

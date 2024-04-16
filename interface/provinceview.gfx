@@ -975,14 +975,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_resource_icon"
 		texturefile = "gfx//interface//resources.tga"
-		noOfFrames = 33
+		noOfFrames = 37
 		loadType = "INGAME"
 	}
 	
 	spriteType = {
 		name = "GFX_resource_icon_small"
 		texturefile = "gfx//interface//resources_small.dds"
-		noOfFrames = 33
+		noOfFrames = 37
 		loadType = "INGAME"
 	}
 
@@ -995,7 +995,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_resource_icon_transparent"
 		texturefile = "gfx//interface//resources.tga"
-		noOfFrames = 33
+		noOfFrames = 37
 		loadType = "INGAME"
 		
 		alwaystransparent = yes
@@ -1427,5 +1427,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_autonomy_increased"
 		texturefile = "gfx/interface/ideas_EU4/autonomy_increased.dds"
+	}
+	spriteType = {
+		name = "GFX_state_view_invisible_button_114x20"
+		texturefile = "gfx\interface\state_view_invisible_button_114x20.dds"
+		transparencecheck = no
 	}
 }

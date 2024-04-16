@@ -1,5 +1,9 @@
 SpriteTypes = {
 	spriteType = {
+		name = "government_reform_vampire_gov"
+		texturefile = "gfx//interface//government_reform_icons//reform_vampires_ascedant.dds"
+	}
+	spriteType = {
 		name = "GFX_train_network"
 		texturefile = "gfx//interface//buildings//train_network.tga"
 		loadType = "INGAME"

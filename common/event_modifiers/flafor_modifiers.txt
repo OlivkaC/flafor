@@ -22,6 +22,11 @@ cheese_hype_mod = {
 	local_unrest = -2
 }
 
+beer_hype_mod = {
+	local_development_cost = -0.1
+	trade_goods_size = 1
+}
+
 religious_zeal_at_conv = {
 	local_missionary_strength = -0.1	
 	local_missionary_maintenance_cost = 1
@@ -263,14 +268,11 @@ iberian_nation_mod = {
 	reduced_liberty_desire = 10
 	possible_policy = 2
 	global_autonomy = -0.05
-	can_colony_boost_development = yes
+	colony_development_boost = 1
 }
 
 the_better_cathedra = {
 	global_tax_modifier = 0.1
 	prestige = 1
 	prestige_decay = -0.01
-	papal_influence = 2
-	monthly_church_power = 0.02
-	monthly_fervor_increase = 2
 }

@@ -1,0 +1,231 @@
+the_combination_act = {
+	monarch_power = DIP
+
+	potential = {
+		OR = {
+			has_idea_group = influence_ideas
+			has_idea_group = vassals_ideas
+		}
+		OR = {
+			has_idea_group = shock_ideas
+			has_idea_group = fire_ideas
+		}
+	}
+	allow = {
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = vassals_ideas
+		}
+		OR = {
+			full_idea_group = shock_ideas
+			full_idea_group = fire_ideas
+		}
+	}
+	
+
+	ai_will_do = {
+		factor = 1	
+	}
+}
+the_combination_act = {
+	monarch_power = DIP
+
+	potential = {
+		OR = {
+			has_idea_group = influence_ideas
+			has_idea_group = vassals_ideas
+		}
+		OR = {
+			has_idea_group = quantity_ideas
+			has_idea_group = quality_ideas
+		}
+	}
+	allow = {
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = vassals_ideas
+		}
+		OR = {
+			full_idea_group = quantity_ideas
+			full_idea_group = quality_ideas
+		}
+	}
+	
+
+	ai_will_do = {
+		factor = 1	
+	}
+}
+the_combination_act = {
+	monarch_power = DIP
+
+	potential = {
+		OR = {
+			has_idea_group = influence_ideas
+			has_idea_group = vassals_ideas
+		}
+		OR = {
+			has_idea_group = offensive_ideas
+			has_idea_group = defensive_ideas
+		}
+	}
+	allow = {
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = vassals_ideas
+		}
+		OR = {
+			full_idea_group = offensive_ideas
+			full_idea_group = defensive_ideas
+		}
+	}
+	
+
+	ai_will_do = {
+		factor = 1	
+	}
+}
+the_combination_act = {
+	monarch_power = DIP
+
+	potential = {
+		OR = {
+			has_idea_group = influence_ideas
+			has_idea_group = vassals_ideas
+		}
+		OR = {
+			has_idea_group = maritime_ideas
+			has_idea_group = naval_ideas
+		}
+	}
+	allow = {
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = vassals_ideas
+		}
+		OR = {
+			full_idea_group = maritime_ideas
+			full_idea_group = naval_ideas
+		}
+	}
+	
+
+	ai_will_do = {
+		factor = 1	
+	}
+}
+the_combination_act = {
+	monarch_power = DIP
+
+	potential = {
+		OR = {
+			has_idea_group = influence_ideas
+			has_idea_group = vassals_ideas
+		}
+		has_idea_group = aristocracy_ideas
+	}
+	allow = {
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = vassals_ideas
+		}
+		full_idea_group = aristocracy_ideas
+	}
+	
+
+	ai_will_do = {
+		factor = 1	
+	}
+}
+the_combination_act = {
+	monarch_power = DIP
+
+	potential = {
+		OR = {
+			has_idea_group = influence_ideas
+			has_idea_group = vassals_ideas
+		}
+		has_idea_group = horde_gov_ideas
+	}
+	allow = {
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = vassals_ideas
+		}
+		full_idea_group = horde_gov_ideas
+	}
+	
+
+	ai_will_do = {
+		factor = 1	
+	}
+}
+the_combination_act = {
+	monarch_power = DIP
+
+	potential = {
+		OR = {
+			has_idea_group = influence_ideas
+			has_idea_group = vassals_ideas
+		}
+		has_idea_group = plutocracy_ideas
+	}
+	allow = {
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = vassals_ideas
+		}
+		full_idea_group = plutocracy_ideas
+	}
+	
+
+	ai_will_do = {
+		factor = 1	
+	}
+}
+the_combination_act = {
+	monarch_power = DIP
+
+	potential = {
+		OR = {
+			has_idea_group = influence_ideas
+			has_idea_group = vassals_ideas
+		}
+		has_idea_group = indigenous_ideas
+	}
+	allow = {
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = vassals_ideas
+		}
+		full_idea_group = indigenous_ideas
+	}
+	
+
+	ai_will_do = {
+		factor = 1	
+	}
+}
+the_combination_act = {
+	monarch_power = DIP
+
+	potential = {
+		OR = {
+			has_idea_group = influence_ideas
+			has_idea_group = vassals_ideas
+		}
+		has_idea_group = theocracy_gov_ideas
+	}
+	allow = {
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = vassals_ideas
+		}
+		full_idea_group = theocracy_gov_ideas
+	}
+	
+
+	ai_will_do = {
+		factor = 1	
+	}
+}

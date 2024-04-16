@@ -145,3 +145,46 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = flafor_flavor.4
+	title = flafor_flavor.4.t
+	desc = flafor_flavor.4.d
+	picture = FAMINE_eventPicture
+	
+	trigger = {
+		is_year = 1450
+		NOT = { is_year = 1600 }
+		any_owned_province = {
+			trade_goods = grain 
+		}
+		NOT = { has_country_flag = beer_hype }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = flafor_flavor.4.a
+		random_owned_province = {
+			limit = { 
+				trade_goods = grain 
+			}
+			add_province_modifier = { 
+				name = beer_hype_mod
+				duration = 3650
+			}
+			change_trade_goods = beer
+			add_base_production = 1
+		}
+		every_owned_province  = {
+			limit = { trade_goods = beer }
+			add_province_modifier = { 
+				name = beer_hype_mod
+				duration = 1825
+			}
+		}
+		set_country_flag = beer_hype
+	}
+}

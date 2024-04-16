@@ -180,3 +180,50 @@ jug_ideas = {
 		artillery_power = 0.15
 	}
 }
+
+bfc_ideas = {
+	start = {
+		naval_morale = 0.20
+		land_morale = 0.20
+	}
+	
+	bonus = {
+		discipline = 0.05
+		navy_tradition = 1
+	}
+	
+	trigger = {
+		tag = BFC
+	}
+	free = yes
+	
+	bfc_lvl_1 = {
+		governing_capacity_modifier = 0.1
+		diplomatic_upkeep = 1
+	}
+	bfc_lvl_2 = {
+		legitimacy = 1
+		republican_tradition = 0.5
+		devotion = 1
+		global_colonial_growth = 20
+	}
+	bfc_lvl_3 = {
+		global_tax_modifier = 0.1
+		global_tariffs = 0.15
+	}
+	bfc_lvl_4 = {
+		global_trade_goods_size_modifier = 0.25
+	}
+	bfc_lvl_5 = {
+		native_uprising_chance = -0.5
+		native_assimilation = 0.5
+	}
+	bfc_lvl_6 = {	
+		technology_cost = -0.1
+	}
+	bfc_lvl_7 = {
+		leader_naval_manuever = 1
+		blockade_efficiency = 0.33
+		allowed_marine_fraction = 0.50
+	}
+}

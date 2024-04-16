@@ -18,3 +18,23 @@ gems = {
 paper = {
 	base_price = 4
 }
+
+cloth = {
+	base_price = 4
+}
+
+fruits = {
+	base_price = 3
+}
+
+beer = {
+	base_price = 4.5
+}
+
+amber = {
+	base_price = 5.0 
+}
+
+honey_and_wax = { 
+	base_price = 5.0 
+}

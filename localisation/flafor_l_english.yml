@@ -1,5 +1,6 @@
 ﻿l_english:
 
+ 
  IBERIAN_NATION: "Iberian Empire"
  IBERIAN_NATION_ADJ: "Iberian"
  IBERIAN_NATION_ADJ2: "Iberian"
@@ -18,22 +19,14 @@
  voivede_principality: "Voivode"
  voivede_principality_desc: "Voivode"
  
- theme_system_gov: "Theme System"
- theme_system_gov_desc: "The themes or thémata were the main military/administrative divisions of the middle Byzantine Empire. They were established in the mid-7th century in the aftermath of the Slavic invasion of the Balkans and Muslim conquests of parts of Byzantine territory, and replaced the earlier provincial system established by Diocletian and Constantine the Great."
- 
  VOIVODE:"Voivode"
  VOIVODESHIP:"Voivedeship"
- 
- estate_nobles_sieze: "Nobles land act"
- estate_nobles_sieze_desc: "Nobles land act"
- estate_burghers_sieze: "Burghers land act"
- estate_burghers_sieze_desc: "Burghers land act"
- estate_cleregy_sieze: "Cleregy land act"
- estate_cleregy_sieze_desc: "Cleregy land act"
 
  mazovian: "Mazovian"
- albanian_group: "Albanian"
  kashubian: "Kashubian"
+ mazovian_new: "Mazovian"
+ kashubian_new: "Kashubian"
+ albanian_group: "Albanian"
  
  voivedeship: "Voivedeship"
  voivedeship_long_desc: "voivedeship"
@@ -117,8 +110,27 @@
  coal_train_usage: "Trains go brr brr"
  train_network_build: "Whole word is now able to build train networks"
  
+ flafor_flavor.4.t:"Beer industrialization"
+ flafor_flavor.4.d:"Beer is one of the world's oldest prepared alcoholic drinks. The earliest archaeological evidence of fermentation consists of 13,000-year-old residues of a beer with the consistency of gruel, used by the semi-nomadic Natufians for ritual feasting, at the Raqefet Cave in the Carmel Mountains near Haifa in Israel."
+ flafor_flavor.4.a:"Aa.. adad!"
+ beer_hype_mod:"Beer industrialization"
+ 
+ 
+ 
  cheese: "Cheese"
  cheeseDESC: "Cheese is a dairy product produced in wide ranges of flavors, textures, and forms by coagulation of the milk protein casein. It comprises proteins and fat from milk, usually the milk of cows, buffalo, goats, or sheep. During production, milk is usually acidified and the enzymes of either rennet or bacterial enzymes with similar activity are added to cause the casein to coagulate."
+ 
+ fruits: "Fruits"
+ fruitsDESC: "Fruits and vegetables are plant products found across the many realms. They are eaten by people of all races and farmed similarly to grain crops in various ways."
+ 
+ beer: "Beer"
+ beerDESC: "Beer is said by many scholars to be the first invention of civilization, arising independently on all the continents. Light to a medium alcoholic drink, it is sacred to the Nords and associated with revelry and happiness"
+ 
+ amber: "Amber"
+ amberDESC: "Amber is formed from plant resin that has hardened over time, prized mostly as a gemstone for its natural beauty. However, some smiths may find it a unique material for lightweight weapons and armour."
+ 
+ honey_and_wax: "Honey and Wax"
+ honey_and_waxDESC: "Honey and wax harvested through apiculture provide sweet-tasting sustenance and sweet-smelling candles."
  
  emp_swi_swiss_cheese_title: "Swiss cheese"
  emp_swi_swiss_cheese_desc: "Swiss cheese is any variety of cheese that resembles Emmental cheese, a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is classified as a Swiss-type or Alpine cheese."
@@ -167,7 +179,7 @@
  jug_lvl_2_desc: " "
  jug_lvl_3: "Military training"
  jug_lvl_3_desc: " "
- jug_lvl_4: "IIn pesants strenght"
+ jug_lvl_4: "In pesants strenght"
  jug_lvl_4_desc: " "
  jug_lvl_5: "January Dictatorship"
  jug_lvl_5_desc: " "
@@ -181,6 +193,32 @@
  
  yugoslavian_state: "Yugoslavian state"
  yugoslavian_state_desc: " "
+ 
+ BFC: "Castillon Union"
+ BFC_ADJ: "Castillon"
+ BFC_ADJ2: "Castillon"
+ 
+ bfc_ideas: "Castillon Union Ideas"
+ bfc_ideas_start: "Castillon Union Tradition"
+ bfc_ideas_bonus: "Castillon Union Ambitions"
+ 
+ bfc_lvl_1: "State capacity"
+ bfc_lvl_1_desc: " "
+ bfc_lvl_2: "King of England"
+ bfc_lvl_2_desc: " "
+ bfc_lvl_3: " congress of Arras"
+ bfc_lvl_3_desc: " "
+ bfc_lvl_4: "Reims Campaign"
+ bfc_lvl_4_desc: " "
+ bfc_lvl_5: "Joan of Arc remains"
+ bfc_lvl_5_desc: " "
+ bfc_lvl_6: "Black Monday"
+ bfc_lvl_6_desc: " "
+ bfc_lvl_7: "Compagnies d'ordonnance"
+ bfc_lvl_7_desc: " "
+ 
+ flafor_form_bfc_title: "Engage Castillon Union"
+ flafor_form_bfc_desc: "Engage Castillon Union"
  
  MGS: "Madagascar"
  MGS_ADJ: "Madagascar"
@@ -271,7 +309,7 @@
  
  policy_info: "Trade and Military polices can`t be changed if any modifiers related to them are active"
  
- manufactury_info: "Manufacturies can be build only in 10 dev provinces, then for each 20 dev gain another manufactury slot"
+ manufactury_info: "For each 25 dev gain additional manufactury slot"
  
  vampire_group: "Ancient evils"
  vampires: "Vampires"

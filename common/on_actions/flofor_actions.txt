@@ -1,0 +1,89 @@
+on_startup = {
+	emperor = {
+		save_global_event_target_as = Emperor
+	}
+	if = {
+		limit = { is_emperor_of_china = yes }
+		save_global_event_target_as = EmperorOfChina
+	}
+	set_country_flag = chosing_army_policy
+	set_country_flag = chosing_trade_policy
+	events = {
+		muslim_school_events.20 #Pick School
+		flavor_got.1 #Event for Gotland to select their mission tree
+		flavor_mng.42 #Event for the starting situation of the Ming 
+		#flavor_fra.15000 #Make the French Revolution happen if starting in 1789
+		flavor_mos.1 #Event regarding the Tatar Yoke
+		flavor_fra.206 # Setup the general for missions
+		flavor_geo.1 # Disaster info
+		flavor_mam.111 # Mamluks-Syria relations
+		mod_policy_options.0
+		mod_policy_options.1
+	}
+	on_startup_effect = yes
+	on_startup_dlc_cleanup_effect = yes
+	initialize_schools_effect = yes #This is only used here but is used for readability of on_action file.
+}
+on_new_monarch = {
+	on_new_monarch_effect = yes
+	crimean_succession_effect = yes #Scripted effect
+	slesvig_question_effect = yes #Scripted effect
+	# ambrosian_republic_effect = yes
+	succession_culture_religion_effect = yes
+	sheik_ul_islam_effect = yes
+	hab_remove_mission_mods_if_not_emperor_effect = yes
+	thu_remain_von_wettin_effect = yes
+	ladislaus_postumus_union_effect = yes
+	events = {
+		tribal_succession.1		# Harsh anti-tribals.
+		9492 					# Remove some event modifiers
+		flavor_boh.8			# Winter King in Prague
+		flavor_kol.1			# Bavarian Archbishop
+		war_of_the_roses.101	# WotR - House of Lancaster wins
+		war_of_the_roses.102	# WotR - House of York wins
+		war_of_the_roses.106	# WotR - Another dynasty has seized the throne
+		flavor_tur.102			# Janissary Reward
+		flavor_ori.7			# Hamvira Victorious
+		flavor_kbo.1			# The two branches of the Sayfawa dynasty
+		flavor_kbo.8			# Sayfawa pretenders
+		flavor_zan.5			# Coup of Coup of Suleiman and Muhammad al-Mazlum.
+		purple_phoenix.1		# BYZ pretenders
+		flavor_pol.3480			# The Pacta Conventa
+		protestantism_events.15	# Catholic Leaning Monarch
+		tengri_events.17		# Keep the Khojas in Power?
+		flavor_tus.15			# Savonarola Dies
+		flavor_brapru.22		# Succession of Albrecht Achilles
+		flavor_brapru.25		# Dispositio Achillea (can also trigger from flavor_brapru.22)
+		flavor_nor.27			# Proclamation in Hamar
+		china_events.43			# Picking new Capital for China
+		celestial_empire_events.3 #Resistance to Sinicization
+		flavor_boh.2			#Heretic Kings
+		flavor_hun.17			#Maintaining the Black Army
+		flavor_tim.1			#Death of Shah Rukh
+		muslim_school_events.20 #No Religious School
+		flavor_daimyo.4			#Shiba Yoshikado
+		flavor_fra.9000			# Fran�ois Villon
+		flavor_sca.2			# Education Focus of the new Ruler
+		flavor_rus.128			# Peter the Great
+		flavor_rus.131			# Streltsy Payment
+		flavor_gbr.102			# Religious Stance of the King
+		MEE_Byzantine_Events.42 # Demetrios claims the throne
+	}
+	random_events = {
+		1000 = 0
+		100 = flavor_kol.1		# Bavarian Archbishop
+		100 = flavor_hsa.3		# Hansa: Tagfahrt
+		100 = inti_events.1		# Birth of a Panaca
+		50 = dynastic_events.4
+		50 = dynastic_events.5
+		25 = harem_events.7		#Failed Policy of Fratricide
+	}
+	
+	if = {
+		limit = { 
+			religion = vampires 
+			is_lesser_in_union = no
+		}
+		add_ruler_personality = immortal_personality
+	}
+}

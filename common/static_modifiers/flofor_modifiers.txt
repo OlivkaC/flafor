@@ -3,14 +3,14 @@ city = {
 	allowed_num_of_buildings = 0
 	local_sailors_modifier = 0.25
 	garrison_growth = 0.05
-	allowed_num_of_manufactories = 0.5
-	allowed_num_of_buildings = 1
+	allowed_num_of_manufactories = 1
+	allowed_num_of_buildings = 3
 }
 
 development = {
 	province_trade_power_modifier = 0.05
 	allowed_num_of_buildings = 0.2
-	allowed_num_of_manufactories = 0.05
+	allowed_num_of_manufactories = 0.04
 	supply_limit_modifier = 0.1
 	local_missionary_strength = -0.001
 	land_forcelimit	= 0.06			# special case, affected by autonomy
@@ -25,7 +25,7 @@ development = {
 }
 
 development_scaled = {
-	local_development_cost = 0.13
+	local_development_cost = 0.1
 }
 
 war_taxes = {
@@ -109,6 +109,8 @@ prestige = {
 	dhimmi_loyalty_modifier = 0.05
 	jains_loyalty_modifier = 0.05
 	rajput_loyalty_modifier = 0.05
+	janissaries_loyalty_modifier = 0.05
+	eunuchs_loyalty_modifier = 0.05
 
 }
 

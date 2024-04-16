@@ -36,14 +36,14 @@ country_event = {
 	
 	trigger = {
 		has_country_modifier = mod_isolationism
-		NOT = { has_country_modifier = trade_p_lack_of_ggods }
+		NOT = { has_country_modifier = trade_p_lack_of_goods }
 		any_country = {
 			trade_embargoing = ROOT
 		}
 	}
 
 	mean_time_to_happen = {
-		months = 140
+		months = 600
 		modifier = {
 			factor = 10
 			full_idea_group = trade_ideas

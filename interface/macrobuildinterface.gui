@@ -299,7 +299,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "amount"
-			position = { x = 5 y = 22 }
+			position = { x = 60 y = 22 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
 			text = ""
@@ -1164,7 +1164,7 @@ guiTypes = {
 			position = { x = 61 y = 420 }
 			quadTextureSprite = "GFX_furnace"
 		}
-  
+
 		instantTextBoxType={
 			name = "ramparts_cost"
 			position = {x = 61 y = 470 }
@@ -1241,13 +1241,13 @@ guiTypes = {
 		
 		checkboxType = {
 			name = "build_road_network"
-			position = { x = 9 y = 517 }
+			position = { x = 321 y = 420 }
 			quadTextureSprite = "GFX_road_network" #Placeholder, real sprite is decided by game (based on button name).
 		}	
 		
 		instantTextBoxType={
 			name = "road_network_cost"
-			position = {x = 9 y = 567 }
+			position = {x = 321 y = 470 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
@@ -1257,13 +1257,13 @@ guiTypes = {
 		
 		checkboxType = {
 			name = "build_train_network"
-			position = { x = 61 y = 517 }
+			position = { x = 373 y = 420 }
 			quadTextureSprite = "GFX_train_network" #Placeholder, real sprite is decided by game (based on button name).
 		}	
 		
 		instantTextBoxType={
 			name = "train_network_cost"
-			position = {x = 61 y = 567 }
+			position = {x = 373 y = 470 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
@@ -1273,10 +1273,10 @@ guiTypes = {
 
 		iconType = {
 			name = "road_network_to_train_network_arrow"
-			position = { x = 53 y = 526 }
+			position = { x = 365 y = 429 }
 			spriteType = "GFX_building_upgrade_icon"
 		}
-		
+
 		iconType = {
 			name = "current_building"
 			#Moves around to be on top of current building

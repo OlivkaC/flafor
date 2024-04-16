@@ -49,20 +49,9 @@ country_decisions = {
 		}
 		effect = {
 			set_country_flag = iberian_nation
-			if = {
-				limit = {
-					government = monarchy
-				}
-				add_government_reform = iberian_nation
-			}
-			if = {
-				limit = {
-					NOT = { government = monarchy }
-				}
-				add_country_modifier = {
-					name = iberian_nation_mod
-					duration = -1
-				}
+			add_country_modifier = {
+				name = iberian_nation_mod
+				duration = -1
 			}
 			if = {
 				limit = {
@@ -83,8 +72,6 @@ country_decisions = {
 		major = yes
 		potential = {
 			NOT = { has_country_flag = chosing_trade_policy }
-			NOT = { has_country_modifier = mod_anti_isolationism }
-			NOT = { has_country_modifier = trade_p_lack_of_goods }
 		}
 		allow = {
 			if = {
@@ -124,10 +111,10 @@ country_decisions = {
 				remove_country_modifier = mod_protectionism
 				remove_country_modifier = mod_no_trade_policy
 			}
+			set_country_flag = chosing_trade_policy
 			country_event = { 
 				id = mod_policy_options.0
 			}
-			set_country_flag = chosing_trade_policy
 		}
 		ai_will_do = {
 			factor = 0
@@ -170,11 +157,12 @@ country_decisions = {
 				remove_country_modifier = mod_mass_conscription
 				remove_country_modifier = mod_peasant_levies
 				remove_country_modifier = mod_national_militia
+				remove_country_modifier = mod_no_army_policy
 			}
+			set_country_flag = chosing_army_policy
 			country_event = { 
 				id = mod_policy_options.1
 			}
-			set_country_flag = chosing_army_policy
 		}
 		ai_will_do = {
 			factor = 0
@@ -388,6 +376,114 @@ country_decisions = {
 				add_dip_power = 50
 				add_mil_power = 50
 			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	flafor_form_bfc = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_bfc_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			tag = FRA
+			OR = {
+				ai = no
+				NOT = { exists = BFC }
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = british_isles_region
+				region = france_region
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		
+		}
+		allow = {
+			is_at_war = no
+			OR = {
+				AND = {
+					british_isles_region = {
+						type = all
+						owned_by = ROOT
+						is_core = ROOT
+					}
+					france_region = {
+						type = all
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+				AND = {
+					legitimacy_equivalent = 100
+					if = {
+						limit = {
+							tag = FRA
+						}
+						OR = {
+							senior_union_with = GBR
+							senior_union_with = ENG
+						}
+						france_region = {
+							type = all
+							owned_by = ROOT
+						}
+						british_isles_region = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			change_tag = BFC
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_accepted_culture = english
+			add_accepted_culture = cosmopolitan_french
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			if = {
+				limit = { senior_union_with = GBR }
+				inherit = GBR
+			}
+			if = {
+				limit = { senior_union_with = ENG }
+				inherit = ENG
+			}
+			add_prestige = 25
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_bfc_flag
 		}
 		ai_will_do = {
 			factor = 100

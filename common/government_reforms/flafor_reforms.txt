@@ -43,47 +43,6 @@ vampire_empire = {
     }
 }
 
-iberian_nation = {
-	icon = "states_general"
-	allow_normal_conversion = yes
-	
-	potential = {
-		OR = {
-			has_country_flag = iberian_nation
-			has_reform = iberian_nation
-		}
-	}
-	
-	trigger = {
-		NOT = { has_country_modifier = iberian_nation_mod }
-	}
-
-    fixed_rank = 3
-	lock_level_when_selected = yes
-	
-	modifiers = {
-		envoy_travel_time = -0.25
-		administrative_efficiency = 0.1
-		free_policy = 1
-		liberty_desire_from_subject_development = -0.5
-		reduced_liberty_desire = 10
-		possible_policy = 2
-		global_autonomy = -0.05
-		can_colony_boost_development = yes
-		years_to_integrate_personal_union = -25
-		no_stability_loss_on_monarch_death = yes
-	}
-    
-    custom_attributes = {
-		maintain_dynasty = yes
-		locked_government_type = yes
-    }
-
-	ai = {
-		factor = 1
-	}
-}
-
 bohemian_crown = {
 	icon = "states_general"
 	allow_normal_conversion = yes
@@ -149,7 +108,6 @@ armed_neutrality = {
 		global_unrest = -2
 		stability_cost_modifier = -0.25
 		global_institution_spread = 0.1
-		all_estate_influence_modifier = -0.1
 		all_estate_loyalty_equilibrium = 0.1
 		no_religion_penalty = yes
 	}
@@ -164,34 +122,6 @@ armed_neutrality = {
 			factor = 0
 			NOT = { tag = SWI }
 		}
-	}
-}
-
-theme_system_gov = {
-	icon = "states_general"
-	allow_normal_conversion = yes
-	
-	potential = {
-		OR = {
-			tag = BYZ
-			has_reform = theme_system_gov
-		}
-	}
-	
-	lock_level_when_selected = yes
-	
-	modifiers = {
-		land_forcelimit_modifier = 0.10
-		merc_maintenance_modifier = -0.10
-		mercenary_manpower = 0.50
-		state_maintenance_modifier = -0.25
-		state_governing_cost = -0.1
-		diplomats = 1
-	}
-	custom_attributes = {
-	}
-	ai = {
-		factor = 1
 	}
 }
 
