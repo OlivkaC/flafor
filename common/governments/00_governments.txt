@@ -117,6 +117,9 @@ monarchy = {
 				egyptian_government_reform
 				#mod
 				vampire_empire
+				bohemian_crown
+				voivede_principality
+				yugoslavian_state
 			}
 		}
 		hereditary_vs_nobility = {
@@ -154,6 +157,7 @@ monarchy = {
 				reform_the_pronoiars_reform
 				diwan_al_khass_reform
 				legacy_of_timur_reform
+				vampires_ascedant
 			}
 		}
 		bureaucracy = {
@@ -1306,6 +1310,8 @@ theocracy = {
 				legacy_of_the_seljuk_reform
 				modernized_furusiyya_reform
 				cawa_auxiliary_forces
+				#mod
+				armed_neutrality
 			}
 		}
 		secularization = {
@@ -1410,8 +1416,6 @@ theocracy = {
 				divinity_through_craftsmanship_reform
 				#1.35
 				peters_government_reform
-				#mod
-				armed_neutrality
 			}
 		}
 	}

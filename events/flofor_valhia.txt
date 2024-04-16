@@ -1,0 +1,76 @@
+namespace = flafor_valhia
+
+country_event = {
+	id = flafor_valhia.99
+	title = flafor_valahian_vampires.0.t
+	desc = flafor_valahian_vampires.0.d
+	picture = FAMINE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		dynasty = "Draculesti"
+		NOT = { religion = vampires }
+		NOT = { has_country_flag = vampire_return }
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		set_country_flag = vampire_return
+	}
+	
+	option = {
+		name = flafor_valahian_vampires.0.a
+		change_religion = vampires
+		change_adm = 2
+		change_dip = 2
+		change_mil = 2
+		add_ruler_personality = immortal_personality
+		define_heir = {
+			dynasty = "Draculesti"
+			age = 15
+			claim = 100
+			no_consort_with_heir = yes
+		}
+		custom_tooltip = vampires_religion_takeover
+		hidden_effect = {
+			every_owned_province = {
+				limit = { religion_group = christian }
+				change_religion = vampires
+			}
+			capital_scope = {
+				add_province_triggered_modifier = seat_of_dracula_own
+				add_province_triggered_modifier = seat_of_dracula_foreign
+				add_building = fort_16th
+			}
+		}
+		add_country_modifier = { 
+			name = return_of_vampires
+			duration = -1 
+		}
+		
+		if = {
+			limit = { NOT = { government = monarchy } }
+			
+			change_government = monarchy
+		}
+		
+		add_government_reform = vampires_ascedant
+		swap_non_generic_missions = yes
+		
+		ai_chance = { 
+			factor = 1
+		}
+	}
+	option = {
+		name = flafor_valahian_vampires.0.b
+		exile_ruler_as = vam_exiled
+		add_country_modifier = { 
+			name = fear_of_vampires
+			duration = 73000 
+		}
+	}
+}

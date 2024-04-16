@@ -207,27 +207,6 @@ valahain_vamp_3 = {
 			}
 		}
 	}
-	vamp_3_5 = {
-		icon = mission_alliances
-		position = 5
-		required_missions = { vamp_2_4 vamp_3_4 vamp_4_4 }
-		trigger = {
-			is_free_or_tributary_trigger = yes
-			is_at_war = no
-			NOT = { exists = VAM }
-			prestige = 100
-		}
-		effect = {
-			remove_country_modifier = return_of_vampires
-			add_country_modifier = {
-				name = vampires_victorious
-				duration = -1
-			}
-			country_event = {
-				id = flafor_valahian_vampires.3
-			}
-		}
-	}
 	vamp_3_4 = {
 		icon = mission_alliances
 		position = 4
@@ -247,6 +226,27 @@ valahain_vamp_3 = {
 		effect = {
 			country_event = {
 				id = flafor_valahian_vampires.1
+			}
+		}
+	}
+	vamp_3_5 = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { vamp_2_4 vamp_3_4 vamp_4_4 }
+		trigger = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			NOT = { exists = VAM }
+			prestige = 100
+		}
+		effect = {
+			remove_country_modifier = return_of_vampires
+			add_country_modifier = {
+				name = vampires_victorious
+				duration = -1
+			}
+			country_event = {
+				id = flafor_valahian_vampires.3
 			}
 		}
 	}
